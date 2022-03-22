@@ -1,14 +1,22 @@
 import React from 'react';
 import Card from '../Components/Card';
+import {useEffect, useState} from 'react';
+const Home = () => {  
+  const [breweries, setBreweries] = useState(); 
 
-const Home = ({props}) => { 
+  const getApiData = async () => {   
+    const response = await fetch('https://api.openbrewerydb.org/breweries') .then((response) => response.json());    
+    setBreweries(response);     
+  }; 
+
+  useEffect(() => {getApiData()}, []); 
+
   return(
-  <section className='home'>
-    <div className='container'>
-      <Card props ={props}/>
-    </div>
-  </section>
+  <div className='home'>    
+      {breweries && breweries.map(items =>
+      <Card props = {items}/>
+      )} 
+  </div>
   );
 }
-
 export default Home;
