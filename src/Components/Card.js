@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './card.css';
 import fullCard from '../Pages/Fullcard';
-import { Link } from 'react-router-dom';
-const Card = ({props}) => {
-const data = props
-   return (     
+import { Link} from 'react-router-dom';
+import {useState, useEffect} from 'react'
+
+
+const Card = ({brewery}) => {
+
+  // const [brewDetails, setDetails ] = useState();
+  // useEffect(() => {setDetails(brewery)}, [brewDetails]); 
+
+  return (     
     <div className='card'>
         <div className='cardDetails'>
-          <li><strong>Name: </strong>{data.name}</li>
-          <li><strong>BreweryType: </strong>{data.brewery_type}</li>
-          <li><strong>City: </strong>{data.city}</li>
+          <p> <strong>Name: </strong>{brewery.name}</p>
+          <p> <strong>BreweryType: </strong>{brewery.brewery_type}</p>
+          <p> <strong>City: </strong>{brewery.city}</p>
         </div>
-        <div className='viewMore'>
-        <Link to={`/FullCard/${data.id}`}>          
-            View Details
+{/* passing data has encountered some issue due to recent react-router-dom update  */}
+
+        <div className='viewMore'>    
+          <Link 
+            className='breweryDetails' 
+            to={{pathname:`/FullCard/${brewery.id}`
+            }}> 
+              View Details
           </Link>
         </div>
      </div>

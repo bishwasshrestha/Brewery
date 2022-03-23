@@ -8,36 +8,22 @@
   flex-direction: column;
   align-items: center;  
 }
+.searchBar {
+  width:100%;
+  padding-top:50px; 
+  display: flex;  
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;  
+}
 
 .home {
   display: grid;
   grid-template-columns: auto auto auto;    
   row-gap: 50px;  
   column-gap: 100px;    
-  margin-top: 100px;
+  margin-top: 50px;
+  margin-left: 100px;
   align-items: center;
 }
 
-
-.searchBar {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  margin-top: 20px;
-}
-
-.searchInput {
-  width: inherit;
-  text-align: right;
-  grid-column-start: 2;
-  grid-column-end: 4;
-}
-
-#searchButton {
-  width: 200px;
-  height: 30px;
-  background-color: rgba(173, 236, 162, 0.76);
-  font-weight: bold;
-  font-size: small;
-  grid-column-end: 5;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}

@@ -13,8 +13,7 @@ ReactDOM.render(
       <Route path="/FullCard" element={<FullCard/>}>       
         <Route path=':id' element={<FullCard/>}/>        
       </Route>     
-      <Route path='*' element={<ErrorPage/>}/>
-   
+      <Route path='*' element={<ErrorPage/>}/>   
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')

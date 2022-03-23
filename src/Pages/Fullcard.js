@@ -1,12 +1,17 @@
 import React from "react";
 import Home from "./Home";
-import { Link, Outlet } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Card from "../Components/Card";
 import "../Components/card.css";
 import brew from "../data2";
-const fullCard = () => {
-  const param = useParams();
+
+
+const fullCard = ({props}) => {
+ 
+  const param = useParams();  
+
+  const navigate = useNavigate();
 
   const result = brew.filter((item) => item.id == param.id);
 
@@ -24,9 +29,9 @@ const fullCard = () => {
               <strong>{key}</strong>:{val}
             </li>
           ))}
-        </div>
+        </div>       
         <div className="goBack">
-          <p>Go Back </p>
+          <a onClick={()=>navigate(-1)} >Go Back </a>
         </div>
       </div>
     </div>
