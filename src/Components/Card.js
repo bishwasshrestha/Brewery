@@ -7,9 +7,6 @@ import {useState, useEffect} from 'react'
 
 const Card = ({brewery}) => {
 
-  // const [brewDetails, setDetails ] = useState();
-  // useEffect(() => {setDetails(brewery)}, [brewDetails]); 
-
   return (     
     <div className='card'>
         <div className='cardDetails'>
